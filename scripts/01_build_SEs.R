@@ -1,7 +1,7 @@
 # ~~~ 01_build_SEs.R ~~~
-# --- GDC (TCGA-BRCA) ---
 # - 0 ~ Libraries
 suppressPackageStartupMessages({
+  # library(GEOquery) # only needed if you plan on running getGEOSuppFiles
   library(SummarizedExperiment)
   library(dplyr)
   library(jsonlite)
@@ -12,6 +12,7 @@ suppressPackageStartupMessages({
   library(tidyr)
 })
 
+# --- GDC (TCGA-BRCA) ---
 # - 1 ~ Folder/File Setup
 setwd("D:/repos/brca2-repro")
 
@@ -23,8 +24,8 @@ clinical_json <- file.path(data_dir, "clinical.json")
 sample_tsv <- file.path(data_dir, "sample_sheet.tsv")
 
 # - 2 ~ Read Files
-meta <- fromJSON(metadata_json, flatten = TRUE) |> 
-  as_tibble() |> 
+meta <- fromJSON(metadata_json, flatten = TRUE) |>
+  as_tibble() |>
   unnest(associated_entities) |>
   transmute(
     file_id = file_id,
@@ -32,7 +33,7 @@ meta <- fromJSON(metadata_json, flatten = TRUE) |>
     case_id = case_id,
     ent_id = entity_id,
     entSub_id = entity_submitter_id
-  ) 
+  )
 
 clinical <- fromJSON(clinical_json, flatten = TRUE) |>
   as_tibble() |>
@@ -75,12 +76,12 @@ expr_list <- purrr::map(seq_len(nrow(identifiers)), function(i) {
   file_name <- identifiers$file_name[i]
   sid <- identifiers$sample_id[i]
   fp <- file.path(expr_dir, folder_name, file_name)
-  
+
   if (!file.exists(fp)) {
     warning("Missing expr file: ", fp)
     return(NULL)
   }
-  
+
   read_expr_file(fp) |>
     dplyr::rename(!!sid := tpm_unstranded)
 })
@@ -118,11 +119,6 @@ rm(list = c(
 gc()
 
 # --- GEO (GSE96058) ---
-# - 0 ~ Libraries + Data
-devtools::install_github("12379Monty/GSE96058")
-BiocManager::install("GEOquery")
-library(GEOquery)
-
 # - 1 ~ Download -> Load GSE Expression Data
 # getGEOSuppFiles("GSE96058", makeDirectory = TRUE) # one-time run!
 raw_gse_expr <- read_csv( # renamed & extracted from ^
