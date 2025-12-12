@@ -9,6 +9,7 @@ renv::init()
 
 # - 2 ~ CRAN
 install.packages(c(
+  "msigdbr",
   "tidyverse"
 ))
 
@@ -16,6 +17,7 @@ install.packages(c(
 install.packages("BiocManager")
 BiocManager::install(c(
   "GEOquery",
+  "GSVA",
   "SummarizedExperiment"
 ))
 
