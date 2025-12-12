@@ -1,0 +1,12 @@
+# R
+.Rhistory
+.Rproj.user
+
+# data + output
+data/processed/
+data/raw/gse_data/
+data/raw/gdc_data/expression/
+figures/
+
+# misc
+*.pdf
