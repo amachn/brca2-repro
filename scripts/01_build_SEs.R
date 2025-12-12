@@ -43,6 +43,8 @@ clinical <- fromJSON(clinical_json, flatten = TRUE) |>
     disease_type = disease_type,
     age_at_diag = demographic.age_at_index,
     vital_status = demographic.vital_status,
+    ethnicity = demographic.ethnicity,
+    race = demographic.race,
     diagnoses = diagnoses,
     follow_ups = follow_ups
   )
@@ -112,7 +114,7 @@ se_tcga <- SummarizedExperiment(
 # - extra ~ GDC Memory Cleanup
 rm(list = c(
   "clinical_json", "data_dir", "expr_dir", "metadata_json", "sample_tsv",
-  "meta", "clinical", "samp", "master", "read_expr_file", "identifiers",
+  "meta", "clinical", "samp", "read_expr_file", "identifiers", # "master",
   "expr_list", "expr_tbl", "expr_mat", "expr_tcga_log2", "common_samples",
   "expr_mat_sub", "sample_data"
 ))
@@ -154,4 +156,4 @@ rm(list = c(
 gc()
 
 # ~~~ OUTPUT -> 02_analysis.R ~~~
-save(se_tcga, se_gse, file = "data/processed/SE_tcga_gse.RData")
+save(se_tcga, se_gse, master, file = "data/processed/SE_tcga_gse.RData")
