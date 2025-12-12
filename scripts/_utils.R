@@ -1,3 +1,6 @@
+# ~~~ _utils.R ~~~
+# * utility functions used in analysis
+
 stopifnot(
   requireNamespace("dplyr", quietly = TRUE),
   requireNamespace("purrr", quietly = TRUE)
