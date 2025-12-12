@@ -24,5 +24,5 @@ install.packages("devtools")
 devtools::install_github("12379Monty/GSE96058")
 
 # - 5 ~ Snapshots
-renv::snapshot(type = "all")
+renv::snapshot()
 writeLines(capture.output(sessionInfo()), "session_info.txt")
