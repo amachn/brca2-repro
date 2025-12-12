@@ -1,3 +1,6 @@
+# ~~~ _snippets.R ~~~
+# * misc. code snippets used throughout the development process
+
 # time-to-run timing snippet:
 ST <- Sys.time()
 # insert code to be timed here
@@ -10,3 +13,7 @@ ip <- ip[!(ip[, "Priority"] %in% c("base", "recommended")), ]
 path.lib <- unique(ip$LibPath)
 pkgs.to.remove <- ip[, 1]
 sapply(pkgs.to.remove, remove.packages, lib = path.lib)
+
+# mass env cleanup
+rm(list = setdiff(ls(), c("KEEP VARS HERE")))
+gc()
