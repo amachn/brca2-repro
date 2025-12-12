@@ -18,7 +18,8 @@ install.packages("BiocManager")
 BiocManager::install(c(
   "GEOquery",
   "GSVA",
-  "SummarizedExperiment"
+  "SummarizedExperiment",
+  "org.Hs.eg.db"
 ))
 
 # - 4 ~ Github
