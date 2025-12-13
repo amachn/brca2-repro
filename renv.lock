@@ -800,7 +800,7 @@
     },
     "GenomicRanges": {
       "Package": "GenomicRanges",
-      "Version": "1.62.0",
+      "Version": "1.62.1",
       "Source": "Bioconductor",
       "Title": "Representation and manipulation of genomic intervals",
       "Description": "The ability to efficiently represent and manipulate genomic annotations and alignments is playing a central role when it comes to analyzing high-throughput sequencing data (a.k.a. NGS data). The GenomicRanges package defines general purpose containers for storing and manipulating genomic intervals and variables defined along a genome. More specialized containers for representing and manipulating short alignments against a reference genome, or a matrix-like summarization of an experiment, are defined in the GenomicAlignments and SummarizedExperiment packages, respectively. Both packages build on top of the GenomicRanges infrastructure.",
@@ -836,9 +836,9 @@
         "SummarizedExperiment (>= 1.39.1)",
         "Rsamtools",
         "GenomicAlignments",
-        "rtracklayer",
         "BSgenome",
         "GenomicFeatures",
+        "UCSC.utils",
         "txdbmaker",
         "Gviz",
         "VariantAnnotation",
@@ -867,10 +867,11 @@
       ],
       "VignetteBuilder": "knitr",
       "Collate": "normarg-utils.R utils.R phicoef.R transcript-utils.R constraint.R strand-utils.R genomic-range-squeezers.R GenomicRanges-class.R GenomicRanges-comparison.R GRanges-class.R GPos-class.R GRangesFactor-class.R DelegatingGenomicRanges-class.R GNCList-class.R GenomicRangesList-class.R GRangesList-class.R makeGRangesFromDataFrame.R makeGRangesListFromDataFrame.R RangedData-methods.R findOverlaps-methods.R intra-range-methods.R inter-range-methods.R coverage-methods.R setops-methods.R subtract-methods.R nearest-methods.R absoluteRanges.R tileGenome.R tile-methods.R genomicvars.R zzz.R",
-      "Repository": "https://bioc-release.r-universe.dev",
-      "RemoteUrl": "https://github.com/bioc/GenomicRanges",
-      "RemoteRef": "RELEASE_3_22",
-      "RemoteSha": "69b49efac3f0647acfc2fbd0c53a704fbf12a5fb",
+      "git_url": "https://git.bioconductor.org/packages/GenomicRanges",
+      "git_branch": "RELEASE_3_22",
+      "git_last_commit": "efdd1c3",
+      "git_last_commit_date": "2025-12-08",
+      "Repository": "Bioconductor 3.22",
       "NeedsCompilation": "yes",
       "Author": "Patrick Aboyoun [aut], Hervé Pagès [aut, cre], Michael Lawrence [aut], Sonali Arora [ctb], Martin Morgan [ctb], Kayla Morrell [ctb], Valerie Obenchain [ctb], Marcel Ramos [ctb], Lori Shepherd [ctb], Dan Tenenbaum [ctb], Daniel van Twisk [ctb]",
       "Maintainer": "Hervé Pagès <hpages.on.github@gmail.com>"
@@ -1448,7 +1449,7 @@
     },
     "S4Arrays": {
       "Package": "S4Arrays",
-      "Version": "1.10.0",
+      "Version": "1.10.1",
       "Source": "Bioconductor",
       "Title": "Foundation of array-like containers in Bioconductor",
       "Description": "The S4Arrays package defines the Array virtual class to be extended by other S4 classes that wish to implement a container with an array-like semantic. It also provides: (1) low-level functionality meant to help the developer of such container to implement basic operations like display, subsetting, or coercion of their array-like objects to an ordinary matrix or array, and (2) a framework that facilitates block processing of array-like objects (typically on-disk objects).",
@@ -1485,10 +1486,11 @@
       ],
       "VignetteBuilder": "knitr",
       "Collate": "utils.R rowsum.R abind.R aperm2.R array_selection.R Nindex-utils.R arep.R array_recycling.R Array-class.R dim-tuning-utils.R Array-subsetting.R Array-subassignment.R ArrayGrid-class.R mapToGrid.R extract_array.R type.R is_sparse.R read_block.R write_block.R show-utils.R Array-kronecker-methods.R zzz.R",
-      "Repository": "https://bioc-release.r-universe.dev",
-      "RemoteUrl": "https://github.com/bioc/S4Arrays",
-      "RemoteRef": "RELEASE_3_22",
-      "RemoteSha": "79170b1b057f3f90b0bdb41c32a6618c28b3ae8c",
+      "git_url": "https://git.bioconductor.org/packages/S4Arrays",
+      "git_branch": "RELEASE_3_22",
+      "git_last_commit": "a4cccba",
+      "git_last_commit_date": "2025-11-24",
+      "Repository": "Bioconductor 3.22",
       "NeedsCompilation": "yes",
       "Author": "Hervé Pagès [aut, cre] (ORCID: <https://orcid.org/0009-0002-8272-4522>), Jacques Serizay [ctb]",
       "Maintainer": "Hervé Pagès <hpages.on.github@gmail.com>"
@@ -1699,7 +1701,7 @@
     },
     "SparseArray": {
       "Package": "SparseArray",
-      "Version": "1.10.2",
+      "Version": "1.10.6",
       "Source": "Bioconductor",
       "Title": "High-performance sparse data representation and manipulation in R",
       "Description": "The SparseArray package provides array-like containers for efficient in-memory representation of multidimensional sparse data in R (arrays and matrices). The package defines the SparseArray virtual class and two concrete subclasses: COO_SparseArray and SVT_SparseArray. Each subclass uses its own internal representation of the nonzero multidimensional data: the \"COO layout\" and the \"SVT layout\", respectively. SVT_SparseArray objects mimic as much as possible the behavior of ordinary matrix and array objects in base R. In particular, they suppport most of the \"standard matrix and array API\" defined in base R and in the matrixStats package from CRAN.",
@@ -1716,7 +1718,7 @@
         "BiocGenerics (>= 0.43.1)",
         "MatrixGenerics (>= 1.11.1)",
         "S4Vectors (>= 0.43.2)",
-        "S4Arrays (>= 1.9.3)"
+        "S4Arrays (>= 1.10.1)"
       ],
       "Imports": [
         "utils",
@@ -1740,11 +1742,11 @@
       ],
       "VignetteBuilder": "knitr",
       "Collate": "utils.R options.R OPBufTree.R thread-control.R sparseMatrix-utils.R is_nonzero.R SparseArray-class.R COO_SparseArray-class.R SVT_SparseArray-class.R extract_sparse_array.R read_block_as_sparse.R SparseArray-dim-tuning.R SparseArray-aperm.R SparseArray-subsetting.R SparseArray-subassignment.R SparseArray-abind.R SparseArray-summarization.R SparseArray-Arith-methods.R SparseArray-Compare-methods.R SparseArray-Logic-methods.R SparseArray-Math-methods.R SparseArray-Complex-methods.R SparseArray-misc-methods.R SparseArray-matrixStats.R rowsum-methods.R SparseMatrix-mult.R randomSparseArray.R readSparseCSV.R is_nonna.R NaArray-class.R NaArray-aperm.R NaArray-subsetting.R NaArray-subassignment.R NaArray-abind.R NaArray-summarization.R NaArray-Arith-methods.R NaArray-Compare-methods.R NaArray-Logic-methods.R NaArray-Math-methods.R NaArray-misc-methods.R NaArray-matrixStats.R zzz.R",
-      "Config/pak/sysreqs": "zlib1g-dev",
-      "Repository": "https://bioc-release.r-universe.dev",
-      "RemoteUrl": "https://github.com/bioc/SparseArray",
-      "RemoteRef": "RELEASE_3_22",
-      "RemoteSha": "a40a9ab04d63a9751a66f3d9fa848d3961a07714",
+      "git_url": "https://git.bioconductor.org/packages/SparseArray",
+      "git_branch": "RELEASE_3_22",
+      "git_last_commit": "9ada013",
+      "git_last_commit_date": "2025-12-02",
+      "Repository": "Bioconductor 3.22",
       "NeedsCompilation": "yes",
       "Author": "Hervé Pagès [aut, cre] (ORCID: <https://orcid.org/0009-0002-8272-4522>), Vince Carey [fnd] (ORCID: <https://orcid.org/0000-0003-4046-0063>), Rafael A. Irizarry [fnd] (ORCID: <https://orcid.org/0000-0002-3944-4309>), Jacques Serizay [ctb] (ORCID: <https://orcid.org/0000-0002-4295-0624>)",
       "Maintainer": "Hervé Pagès <hpages.on.github@gmail.com>"
@@ -5930,14 +5932,14 @@
     },
     "mgcv": {
       "Package": "mgcv",
-      "Version": "1.9-4",
+      "Version": "1.9-3",
       "Source": "Repository",
       "Authors@R": "person(given = \"Simon\", family = \"Wood\", role = c(\"aut\", \"cre\"), email = \"simon.wood@r-project.org\")",
       "Title": "Mixed GAM Computation Vehicle with Automatic Smoothness Estimation",
-      "Description": "Generalized additive (mixed) models, some of their extensions and  other generalized ridge regression with multiple smoothing  parameter estimation by (Restricted) Marginal Likelihood,  Cross Validation and similar, or using iterated nested Laplace approximation for fully Bayesian inference. See Wood (2025) <doi:10.1146/annurev-statistics-112723-034249> for an overview. Includes a gam() function, a wide variety of smoothers, 'JAGS' support and distributions beyond the exponential family.",
+      "Description": "Generalized additive (mixed) models, some of their extensions and  other generalized ridge regression with multiple smoothing  parameter estimation by (Restricted) Marginal Likelihood,  Generalized Cross Validation and similar, or using iterated  nested Laplace approximation for fully Bayesian inference. See  Wood (2017) <doi:10.1201/9781315370279> for an overview.  Includes a gam() function, a wide variety of smoothers, 'JAGS'  support and distributions beyond the exponential family.",
       "Priority": "recommended",
       "Depends": [
-        "R (>= 4.4.0)",
+        "R (>= 3.6.0)",
         "nlme (>= 3.1-64)"
       ],
       "Imports": [
@@ -5959,8 +5961,7 @@
       "NeedsCompilation": "yes",
       "Author": "Simon Wood [aut, cre]",
       "Maintainer": "Simon Wood <simon.wood@r-project.org>",
-      "Repository": "RSPM",
-      "Encoding": "UTF-8"
+      "Repository": "CRAN"
     },
     "microbenchmark": {
       "Package": "microbenchmark",
