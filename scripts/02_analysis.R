@@ -21,15 +21,12 @@ gse_mat <- assay(se_gse, "log2FPKM")
 
 genes_tcga <- c(
   BRCA2="ENSG00000139618", MKI67="ENSG00000148773", E2F1="ENSG00000101412",
-  RB1="ENSG00000139687", PARP1="ENSG00000143799", # PALB2="", # doesn't exist?
+  RB1="ENSG00000139687", PARP1="ENSG00000143799", PALB2="ENSG00000083093",
   ESR1="ENSG00000091831", PGR="ENSG00000082175", ERBB2="ENSG00000141736"
 )
 
 for (g in names(genes_tcga)) {
   colData(se_tcga)[[g]] <- tcga_mat[genes_tcga[g], ]
-}
-
-for (g in c("BRCA2","MKI67","E2F1","RB1","PARP1","ESR1","PGR","ERBB2")) {
   colData(se_gse)[[g]] <- gse_mat[g, ]
 }
 
