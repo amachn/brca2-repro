@@ -9,7 +9,9 @@ renv::init()
 
 # - 2 ~ CRAN
 install.packages(c(
+  "ggpubr",
   "msigdbr",
+  "patchwork",
   "tidyverse"
 ))
 
